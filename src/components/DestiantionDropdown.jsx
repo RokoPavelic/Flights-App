@@ -6,7 +6,7 @@ export default function DestinationDropdown() {
 
  return(
         <Form.Select aria-label="Departure Origin">
-            <option>Select a destination</option>
+            <option>Select the destination</option>
             <option value="1">Athens</option>
             <option value="2">Barcellona</option>
             <option value="3">Madrid</option>

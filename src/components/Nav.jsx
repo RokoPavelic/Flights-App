@@ -1,12 +1,12 @@
-import DepartureDropdown from './components/DepartureDropdown';
-import DestinationDropdown from './components/DestiantionDropdown';
+import DepartureDropdown from './DepartureDropdown';
+import DestinationDropdown from './DestiantionDropdown';
 import Logo from "../img/4135662.png";
 
 
 export default function Nav() {
 
     return (
-        <nav>
+        <nav className='navbar'>
             <img src={<Logo />} alt="Logo" />
             <DepartureDropdown />
             <DestinationDropdown />
