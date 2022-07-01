@@ -9,11 +9,11 @@ export default function DepartureDropdown({ setDeparture, departure }) {
       value={departure}
       className="Departure-dropdown"
     >
-      <option>Select a destination</option>
-      <option value="BER">Berlin</option>
-      <option value="PED">Pardubice</option>
-      <option value="PRG">Prague</option>
-      <option value="WAW">Warsaw</option>
+      <option className="dropdown">Select a destination</option>
+      <option className="dropdown" value="BER">Berlin</option>
+      <option className="dropdown"value="PED">Pardubice</option>
+      <option className="dropdown"value="PRG">Prague</option>
+      <option className="dropdown"value="WAW">Warsaw</option>
     </Form.Select>
   );
 }
