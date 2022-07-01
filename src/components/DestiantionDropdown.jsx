@@ -1,5 +1,4 @@
 import Form from "react-bootstrap/Form";
-
 export default function DestinationDropdown({ setDestination, destination }) {
   return (
     <Form.Select

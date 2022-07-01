@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Flight from "./Flight";
-import DepartureDropdown from "./components/DepartureDropdown";
-import DestinationDropdown from "./components/DestiantionDropdown";
+import Nav from "./components/Nav";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
   const [flights, setFlights] = useState();
@@ -25,9 +25,10 @@ function App() {
   console.log(flights);
   return (
     <div className="App">
-      <DepartureDropdown setDeparture={setDeparture} departure={departure} />
-      <DestinationDropdown
+      <Nav
+        setDeparture={setDeparture}
         setDestination={setDestination}
+        departure={departure}
         destination={destination}
       />
       {departure && destination ? (
