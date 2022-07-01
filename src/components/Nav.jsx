@@ -1,3 +1,4 @@
+
 import DepartureDropdown from './DepartureDropdown';
 import DestinationDropdown from './DestiantionDropdown';
 
@@ -39,3 +40,4 @@ export default function Nav({setDeparture, setDestination, destination, departur
         </nav>
     )
 }
+

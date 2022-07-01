@@ -51,6 +51,7 @@ function App() {
             flights?.data?.map((flight, i) => (
               <Flight key={i} flight={flight} />
             ))
+            
           ) : (
             <LoadingSpinner />
           )}
