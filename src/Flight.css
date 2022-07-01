@@ -1,18 +1,21 @@
 body{
  margin-top: 0;
+
  font-size: 1rem;
  color: #0b2545;
  font-family: 'Raleway', sans-serif;
  display: flex;
  justify-content: center;
+  }
 
-}
 
 .container{
     margin: 2rem;
+    margin-left: 2rem;
     width: 400px;
     height: 200px;
-    padding-top: 20px;
+   
+   
     border-radius: 2%;
     background-color: #eef4ed;
     display: flex;
@@ -22,6 +25,7 @@ body{
     
     
 }
+
 
 p{
     margin: 7px;
