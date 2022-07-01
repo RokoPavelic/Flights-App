@@ -21,6 +21,7 @@ function App() {
   }
 
   useEffect(() => {
+    if (!departure || !destination) return;
     fetchData(url);
   }, [departure, destination, limit]);
 
@@ -29,13 +30,28 @@ function App() {
   
   return (
     <div className="App">
-      <Nav setDeparture={setDeparture} setDestination={setDestination} departure={departure} destination={destination}/>
-      {flights ? (
-        flights?.data?.map((flight, i) => <Flight key={i} flight={flight} />)
-      ) : 
-        <LoadingSpinner />
-      }
+
+      <Nav
+        setDeparture={setDeparture}
+        setDestination={setDestination}
+        departure={departure}
+        destination={destination}
+      />
+      {departure && destination ? (
+        <div>
+          {flights ? (
+            flights?.data?.map((flight, i) => (
+              <Flight key={i} flight={flight} />
+            ))
+          ) : (
+            <LoadingSpinner />
+          )}
+        </div>
+      ) : (
+        <p>Please Select Departure and Destination</p>
+      )}
       { flights? <Button onClick={()=> setLimit(limit + 5)}/>: null }
+
     </div>
 
   );
