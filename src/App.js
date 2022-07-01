@@ -14,14 +14,16 @@ function App() {
   const [term, setTerm] = useState();
   const [searched, setSearched] = useState();
   const [stopover, setStopover] = useState(999);
+  const [isLoading, setIsLoading] = useState(false);
 
   const url = `https://api.skypicker.com/flights?fly_from=${departure}&max_stopover=${stopover}&fly_to=${destination}&partner=data4youcbp202106&limit=${limit}`;
 
   async function fetchData(url) {
+    setIsLoading(true);
     const response = await fetch(url);
     const data = await response.json();
-
-    return setFlights(data);
+    setFlights(data);
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -48,7 +50,7 @@ function App() {
 
       {departure && destination ? (
         <div>
-          {flights ? (
+          {isLoading ? (
             flights?.data?.map((flight, i) => (
               <Flight key={i} flight={flight} />
             ))
