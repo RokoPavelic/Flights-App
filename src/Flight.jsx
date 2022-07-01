@@ -28,6 +28,10 @@ const Flight = ({ flight }) => {
       <p>
         <strong> Stopovers:</strong> {route.length}
       </p>
+      <p><strong>Arrival time:</strong>{DateTime.fromMillis(aTime * 1000).toFormat("hh:mm")}</p>
+      <p><strong>Price: $ </strong>{price}</p>
+
+      <button> See Flight</button>
     </div>
   );
 };
