@@ -10,7 +10,7 @@ const Flight = ({ flight }) => {
       <p>
         Departure time:{DateTime.fromMillis(dTime * 1000).toFormat("hh:mm")}
       </p>
-      <p>Arivale time:{DateTime.fromMillis(aTime * 1000).toFormat("hh:mm")}</p>
+      <p>Arrival time:{DateTime.fromMillis(aTime * 1000).toFormat("hh:mm")}</p>
       <p>Price:{price}</p>
     </div>
   );
