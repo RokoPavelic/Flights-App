@@ -1,0 +1,31 @@
+body{
+    margin: auto;
+  padding: auto;
+ font-size: 1rem;
+ color: #0b2545;
+ font-family: 'Raleway', sans-serif;
+ display: flex;
+ justify-content: center;
+
+}
+
+.container{
+    margin: 2rem;
+    width: 400px;
+    height: 300px;
+    padding-top: 20px;
+    border-radius: 2%;
+    background-color: #eef4ed;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    box-shadow: 0, 0, 20px, gray;
+    
+    
+}
+
+p{
+    padding-left: 4rem;
+    text-align: left;
+
+}
