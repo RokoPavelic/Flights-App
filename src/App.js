@@ -6,8 +6,8 @@ import DestinationDropdown from "./components/DestiantionDropdown";
 
 function App() {
   const [flights, setFlights] = useState();
-  const [departure, setDeparture] = useState("PRG");
-  const [destination, setDestination] = useState("VLC");
+  const [departure, setDeparture] = useState();
+  const [destination, setDestination] = useState();
   const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&partner=data4youcbp202106`;
 
   async function fetchData(url) {
@@ -18,6 +18,7 @@ function App() {
   }
 
   useEffect(() => {
+    if (!departure || !destination) return;
     fetchData(url);
   }, [departure, destination]);
 
@@ -29,11 +30,18 @@ function App() {
         setDestination={setDestination}
         destination={destination}
       />
-
-      {flights ? (
-        flights?.data?.map((flight, i) => <Flight key={i} flight={flight} />)
+      {departure && destination ? (
+        <div>
+          {flights ? (
+            flights?.data?.map((flight, i) => (
+              <Flight key={i} flight={flight} />
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
       ) : (
-        <p>Loading...</p>
+        <p>Please slect Departure and destination</p>
       )}
     </div>
   );
