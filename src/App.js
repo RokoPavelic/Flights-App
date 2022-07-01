@@ -1,7 +1,9 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Flight from "./Flight";
 import { useState, useEffect } from "react";
+import './App.css';
+import Flight from "./Flight";
+import DepartureDropdown from './components/DepartureDropdown';
+import DestinationDropdown from './components/DestiantionDropdown';
+
 
 function App() {
   const [flights, setFlights] = useState();
@@ -27,6 +29,7 @@ function App() {
       ) : (
         <p>Loading...</p>
       )}
+    
     </div>
   );
 }
