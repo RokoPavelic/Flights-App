@@ -13,6 +13,8 @@ function App() {
   const [destination, setDestination] = useState("VLC");
   const [limit, setLimit] = useState(5);
   const [term, setTerm] = useState();
+  const [searched, setSearched] = useState();
+
   const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&partner=data4youcbp202106&limit=${limit}`;
 
   async function fetchData(url) {
@@ -40,6 +42,8 @@ function App() {
         term={term}
         departure={departure}
         destination={destination}
+        setSearched={setSearched}
+        searched={searched}
       />
       {departure && destination ? (
         <div>
