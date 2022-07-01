@@ -6,14 +6,14 @@ const Flight = ({ flight }) => {
   const { cityFrom, cityTo, aTime, dTime, price } = flight;
   return (
     <div className="container">
-      <p> From: {cityFrom}</p>
-      <p> To: {cityTo}</p>
+      <p> <strong>From:</strong> {cityFrom}</p>
+      <p> <strong> To:</strong> {cityTo}</p>
       <p>
-        Departure time: {DateTime.fromMillis(dTime * 1000).toFormat("hh:mm")}
+        <strong>Departure time:</strong> {DateTime.fromMillis(dTime * 1000).toFormat("hh:mm")}
       </p>
 
-      <p>Arrival time:{DateTime.fromMillis(aTime * 1000).toFormat("hh:mm")}</p>
-      <p>Price:{price}</p>
+      <p><strong>Arrival time:</strong>{DateTime.fromMillis(aTime * 1000).toFormat("hh:mm")}</p>
+      <p><strong>Price: $ </strong>{price}</p>
 
 
     </div>
