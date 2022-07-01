@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Flight from "./Flight";
-<<<<<<< HEAD
 import Nav from "./components/Nav"
 import LoadingSpinner from './components/LoadingSpinner';
 
-=======
-import DepartureDropdown from "./components/DepartureDropdown";
-import DestinationDropdown from "./components/DestiantionDropdown";
->>>>>>> deeff8c9f598c476c6a5cdc5ed1c0417c08c32e3
 
 function App() {
   const [flights, setFlights] = useState();
@@ -29,25 +24,8 @@ function App() {
 
   console.log(flights);
   return (
-<<<<<<< HEAD
-    <>
-      <Nav />
-      <div className="App">
-        {flights ? (
-          flights.data.map((flight, i) => <Flight flight={flight} />)
-        ) : (
-          <p>Loading...</p>
-        )}
-      
-      </div>
-    </>
-=======
     <div className="App">
-      <DepartureDropdown setDeparture={setDeparture} departure={departure} />
-      <DestinationDropdown
-        setDestination={setDestination}
-        destination={destination}
-      />
+      <Nav setDeparture={setDeparture} setDestination={setDestination} departure={departure} destination={destination}/>
 
       {flights ? (
         flights?.data?.map((flight, i) => <Flight key={i} flight={flight} />)
@@ -55,7 +33,6 @@ function App() {
         <p>Loading...</p>
       )}
     </div>
->>>>>>> deeff8c9f598c476c6a5cdc5ed1c0417c08c32e3
   );
 }
 
