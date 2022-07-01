@@ -1,5 +1,6 @@
-import Form from 'react-bootstrap/Form'; 
+import Form from "react-bootstrap/Form";
 
+<<<<<<< HEAD
 
 
 export default function DestinationDropdown() {
@@ -16,3 +17,21 @@ export default function DestinationDropdown() {
         )
        
 }
+=======
+export default function DestinationDropdown({ setDestination, destination }) {
+  return (
+    <Form.Select
+      aria-label="Departure Origin"
+      onChange={(e) => setDestination(e.target.value)}
+      value={destination}
+    >
+      <option>Select a destination</option>
+      <option value="ATH">Athens</option>
+      <option value="BCN">Barcellona</option>
+      <option value="MAD">Madrid</option>
+      <option value="MXP">Milano</option>
+      <option value="VLC">Valencia</option>
+    </Form.Select>
+  );
+}
+>>>>>>> deeff8c9f598c476c6a5cdc5ed1c0417c08c32e3
