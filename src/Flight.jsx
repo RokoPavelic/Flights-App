@@ -29,7 +29,7 @@ const Flight = ({ flight }) => {
         <strong> Stopovers:</strong> {route.length}
       </p>
 
-      <button> See Flight</button>
+      <button className="btn1"> See Flight</button>
     </div>
   );
 };
