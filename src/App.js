@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Flight from "./Flight";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [flights, setFlights] = useState();
+  const url =
+    "https://api.skypicker.com/flights?fly_from=PRG&fly_to=VLC&partner=data4youcbp202106";
+
+  async function fetchData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    return setFlights(data);
+  }
+
+  useEffect(() => {
+    fetchData(url);
+  }, []);
+
+  console.log(flights);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {flights ? (
+        flights.data.map((flight, i) => <Flight flight={flight} />)
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 }
