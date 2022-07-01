@@ -42,7 +42,7 @@ function App() {
           )}
         </div>
       ) : (
-        <p>Please slect Departure and destination</p>
+        <p>Please Select Departure and Destination</p>
       )}
     </div>
   );

@@ -25,6 +25,7 @@ body{
 }
 
 p{
+    margin: 15px;
     padding-left: 4rem;
     text-align: left;
 
