@@ -5,6 +5,7 @@ export default function DestinationDropdown({ setDestination, destination }) {
       aria-label="Departure Origin"
       onChange={(e) => setDestination(e.target.value)}
       value={destination}
+      className="Destination-dropdown"
     >
       <option>Select a destination</option>
       <option value="ATH">Athens</option>

@@ -30,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>FLIGHTS</h1>
       <Nav
         setDeparture={setDeparture}
         setDestination={setDestination}
@@ -39,6 +40,7 @@ function App() {
       <div>
         <label htmlFor="DirectFlights">Direct Flights</label>
         <input
+          className="input"
           onChange={(e) => setStopovers(e.target.checked ? 0 : 999)}
           type="checkbox"
           name="DirectFlights"

@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav-logo {
+  height: 16em;
+}
+
+.nav-items {
+  display: flex;
+}
+
+.DepartingFrom {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  color: #a45185;
+  font-weight: bolder;
+  padding: 2em 1em 1em 2em;
+}
+
+.Destination {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  color: #a45185;
+  font-weight: bolder;
+  padding: 2em 1em 1em 2em;
+}

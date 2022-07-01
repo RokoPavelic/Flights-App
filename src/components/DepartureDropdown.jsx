@@ -1,4 +1,5 @@
 import Form from "react-bootstrap/Form";
+import '../style/nav.css';
 
 export default function DepartureDropdown({ setDeparture, departure }) {
   return (
@@ -6,6 +7,7 @@ export default function DepartureDropdown({ setDeparture, departure }) {
       aria-label="Departure Origin"
       onChange={(e) => setDeparture(e.target.value)}
       value={departure}
+      className="Departure-dropdown"
     >
       <option>Select a destination</option>
       <option value="BER">Berlin</option>
