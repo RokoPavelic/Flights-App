@@ -8,7 +8,8 @@ function App() {
   const [flights, setFlights] = useState();
   const [departure, setDeparture] = useState();
   const [destination, setDestination] = useState();
-  const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&partner=data4youcbp202106`;
+  const [stopovers, setStopovers] = useState(0);
+  const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&max_stopovers=${stopovers}&partner=data4youcbp202106`;
 
   async function fetchData(url) {
     const response = await fetch(url);
@@ -20,7 +21,7 @@ function App() {
   useEffect(() => {
     if (!departure || !destination) return;
     fetchData(url);
-  }, [departure, destination]);
+  }, [departure, destination, stopovers]);
 
   console.log(flights);
   return (
@@ -31,6 +32,14 @@ function App() {
         departure={departure}
         destination={destination}
       />
+      <div>
+        <label htmlFor="DirectFlights">Direct Flights</label>
+        <input
+          onChange={(e) => setStopovers(e.target.value)}
+          type="checkbox"
+          name="DirectFlights"
+        />
+      </div>
       {departure && destination ? (
         <div>
           {flights ? (
