@@ -3,13 +3,15 @@ import "./App.css";
 import Flight from "./Flight";
 import Nav from "./components/Nav";
 import LoadingSpinner from "./components/LoadingSpinner";
+import Button from "./components/Button";
 
 function App() {
   const [flights, setFlights] = useState();
   const [departure, setDeparture] = useState();
+  const [limit, setLimit] = useState(5);
   const [destination, setDestination] = useState();
-  const [stopovers, setStopovers] = useState(0);
-  const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&max_stopovers=${stopovers}&partner=data4youcbp202106`;
+  const [stopovers, setStopovers] = useState(999);
+  const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&max_stopovers=${stopovers}&partner=data4youcbp202106&limit=${limit}`;
 
   async function fetchData(url) {
     const response = await fetch(url);
@@ -21,9 +23,11 @@ function App() {
   useEffect(() => {
     if (!departure || !destination) return;
     fetchData(url);
-  }, [departure, destination, stopovers]);
+  }, [departure, destination, stopovers, limit]);
 
   console.log(flights);
+  console.log(stopovers);
+
   return (
     <div className="App">
       <Nav
@@ -35,7 +39,7 @@ function App() {
       <div>
         <label htmlFor="DirectFlights">Direct Flights</label>
         <input
-          onChange={(e) => setStopovers(e.target.value)}
+          onChange={(e) => setStopovers(e.target.checked ? 0 : 999)}
           type="checkbox"
           name="DirectFlights"
         />
@@ -47,12 +51,13 @@ function App() {
               <Flight key={i} flight={flight} />
             ))
           ) : (
-            <p>Loading...</p>
+            <LoadingSpinner />
           )}
         </div>
       ) : (
-        <p>Please slect Departure and destination</p>
+        <p>Please Select Departure and Destination</p>
       )}
+      {flights ? <Button onClick={() => setLimit(limit + 5)} /> : null}
     </div>
   );
 }
