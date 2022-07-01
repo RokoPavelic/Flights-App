@@ -4,6 +4,7 @@ import Flight from "./Flight";
 import Nav from "./components/Nav"
 import LoadingSpinner from './components/LoadingSpinner';
 import Button from './components/Button'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [departure, setDeparture] = useState("PRG");
   const [destination, setDestination] = useState("VLC");
   const [limit, setLimit] = useState(5);
+  const [term, setTerm] = useState();
   const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&partner=data4youcbp202106&limit=${limit}`;
 
   async function fetchData(url) {
@@ -33,7 +35,9 @@ function App() {
 
       <Nav
         setDeparture={setDeparture}
-        setDestination={setDestination}
+        setDestination={setDestination}s
+        setTerm={setTerm}
+        term={term}
         departure={departure}
         destination={destination}
       />
