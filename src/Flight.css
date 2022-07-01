@@ -1,6 +1,5 @@
 body{
-    margin: auto;
-  padding: auto;
+ margin-top: 0;
  font-size: 1rem;
  color: #0b2545;
  font-family: 'Raleway', sans-serif;
@@ -12,7 +11,7 @@ body{
 .container{
     margin: 2rem;
     width: 400px;
-    height: 300px;
+    height: 200px;
     padding-top: 20px;
     border-radius: 2%;
     background-color: #eef4ed;
@@ -25,7 +24,7 @@ body{
 }
 
 p{
-    margin: 15px;
+    margin: 7px;
     padding-left: 4rem;
     text-align: left;
 
