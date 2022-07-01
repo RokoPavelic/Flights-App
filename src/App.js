@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import './App.css';
+import "./App.css";
 import Flight from "./Flight";
-import DepartureDropdown from './components/DepartureDropdown';
-import DestinationDropdown from './components/DestiantionDropdown';
-
+import Nav from "./components/Nav";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
   const [flights, setFlights] = useState();
-  const url =
-    "https://api.skypicker.com/flights?fly_from=PRG&fly_to=VLC&partner=data4youcbp202106";
+  const [departure, setDeparture] = useState();
+  const [destination, setDestination] = useState();
+  const url = `https://api.skypicker.com/flights?fly_from=${departure}&fly_to=${destination}&partner=data4youcbp202106`;
 
   async function fetchData(url) {
     const response = await fetch(url);
@@ -18,18 +18,32 @@ function App() {
   }
 
   useEffect(() => {
+    if (!departure || !destination) return;
     fetchData(url);
-  }, []);
+  }, [departure, destination]);
 
   console.log(flights);
   return (
     <div className="App">
-      {flights ? (
-        flights.data.map((flight, i) => <Flight flight={flight} />)
+      <Nav
+        setDeparture={setDeparture}
+        setDestination={setDestination}
+        departure={departure}
+        destination={destination}
+      />
+      {departure && destination ? (
+        <div>
+          {flights ? (
+            flights?.data?.map((flight, i) => (
+              <Flight key={i} flight={flight} />
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
       ) : (
-        <p>Loading...</p>
+        <p>Please slect Departure and destination</p>
       )}
-    
     </div>
   );
 }
