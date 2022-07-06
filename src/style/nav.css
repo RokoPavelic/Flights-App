@@ -1,10 +1,8 @@
 .navbar {
   display: flex;
   align-items: center;
- 
-  
 }
-img{
+img {
   max-width: 200px;
   max-height: 200px;
 }
@@ -32,21 +30,24 @@ img{
   padding: 2em 1em 1em 2em;
 }
 
-.button-search{
- padding: 2px;
- margin-left: 1rem;
+.button-search {
+  padding: 2px;
+  margin-left: 1rem;
   width: 80px;
   height: 30px;
   text-align: center;
-
 }
 
-.dropdown{
-  font-family:'Raleway';
-  background-color: #4CAF50;
-  color: white;
+.dropdown {
+  font-family: "Raleway";
+  background-color: white;
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+}
+
+.Destination-dropdown {
+  color: black;
 }

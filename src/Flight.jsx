@@ -28,8 +28,6 @@ const Flight = ({ flight }) => {
       <p>
         <strong> Stopovers:</strong> {route.length}
       </p>
-
-      <button className="btn1"> See Flight</button>
     </div>
   );
 };

@@ -19,15 +19,7 @@ export default function Nav({
 }) {
   return (
     <nav className="navbar">
-      <img src={logo} alt="Logo" className="Nav-logo" />
-
       <div className="nav-items">
-        {/* 
-            <div className="nav-item">
-            <label htmlFor="departure" className="DepartingFrom">Search:</label>
-                <SearchBar term= {term} setTerm={setTerm} setSearched={setSearched} searched={searched}/>
-            </div> */}
-
         <div className="nav-item">
           <label htmlFor="departure" className="DepartingFrom">
             From:
@@ -46,15 +38,7 @@ export default function Nav({
             setDestination={setDestination}
             destination={destination}
           />
-          <div>
-            <label>Direct Flights </label>
-            <input
-              type="checkbox"
-              onChange={(e) => {
-                setStopover(e.target.checked ? 0 : 999);
-              }}
-            />
-          </div>
+          <div></div>
         </div>
       </div>
     </nav>
